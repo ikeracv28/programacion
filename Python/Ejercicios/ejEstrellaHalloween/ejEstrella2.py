@@ -137,7 +137,13 @@ while intentos !=0:  #Un monstruo es seleccionado aleatoriamente y su dificultad
                 intentos = intentos - 1
         else:
             print("Selecciona un objeto correcto")
+<<<<<<< HEAD
 if resultado_juego == True:
     print("Has ganado ")
 elif resultado_juego == False:
+=======
+if resultado == True:
+    print("Has ganado ")
+elif resultado == False:
+>>>>>>> c9b82aba953927e30daf3772c514caa52d26ca56
     print(f"Has perdido tu {monstruo[monstruo_random]} de nivel {dificultad_random} se ha escapado")
