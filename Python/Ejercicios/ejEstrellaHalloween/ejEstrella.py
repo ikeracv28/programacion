@@ -21,33 +21,70 @@ Listas de monstruos y objetos
 monstruos = { 'vampiro': 3, 'momia': 2, 'bruja': 4, 'esqueleto': 1, 'fantasma': 5 } 
 # Lista de objetos para capturar
 '''
+#importamos el diccionario random
+import random
 
 #creamos las listas que vamos a utilizar
 
 monstruos = [
-{"monstuo": "momia", "dificultad": "2"},
-{"monstuo": "zombie", "dificultad": "5"},
-{"monstuo": "vampiro", "dificultad": "4"},
-{"monstuo": "hombre lobo", "dificultad": "3"},
-{"monstuo": "bruja", "dificultad": "1"},
-{"monstuo": "gargola", "dificultad": "3"},
-{"monstuo": "frankestein", "dificultad": "4"},
+{"nombre": "momia"},
+{"nombre": "zombie", "dificultad": 5},
+{"nombre": "vampiro", "dificultad": 4},
+{"nombre": "hombre lobo", "dificultad": 3},
+{"nombre": "bruja", "dificultad": 1},
+{"nombre": "gargola", "dificultad": 3},
+{"nombre": "frankestein", "dificultad": 4},
 ]
 
 objetos = ("estaca", "hechizo", "pocion magica", "ballesta", "hacha", "varita", "espada", "escopeta", "coctel molotov" )
 
+# Probabilidades de captura según nivel de dificultad
+probabilidad_captura = [
+{"nivel": 1, "probabilidad": '90%'},
+{"nivel": 2, "probabilidad": '75%'},
+{"nivel": 3, "probabilidad": '50%'},
+{"nivel": 4, "probabilidad": '35%'},
+{"nivel": 5, "probabilidad": '20%'},
+]
 intentos = 3
 
-import random
+#############################################################################################
+
+#Esta funncion es para seleccionar un monstruo aleatorio
+def monstruo_aleatorio():
+    return random.choice(monstruos)
+
+#Esta es la funcion del juego
+def capturar_monstruo():
+    intentos = 3
+    monstruos = monstruo_aleatorio()
+    nombre_monstruo = monstruos["nombre"]
+    dificultad_monstruo = monstruos["dificultad"]
+    return print(f"Un {nombre_monstruo} ha aparecido con nivel {dificultad_monstruo}")
+        
+
+#Esta es la funcion de la probabilidad de captura
+def intentar_captura(dificultad):
+    probabilidad = probabilidad_captura[dificultad]
+    return random.randint(1, 100) <= probabilidad
 
 
-monstruo_random = random.randint(1,7)
-print(f"¡¡Bienvenido a la caza de monstruos de Halloween!! ")
+
+##########################################
 
 
-print(f"te ha salido {monstruos[monstruo_random]}")
+print("¡¡Bienvenido a la caza de monstruos de Halloween!! ")
 
-
-
+while True:
+    monstruo_juego = capturar_monstruo()
+    print(f"Tienes {intentos} intentos restantes")
+    print(f"Elige un objeto para intentar capturar al {monstruos[monstruo_juego]}: estaca, hechizo, pocion magica, ballesta, hacha, varita, espada, escopeta, coctel molotov")
+    objeto_elegido = input("Escribe el nombre del objeto elegido: ")
+    if objeto_elegido != objetos.items():
+        print(f"Objeto no valido, elige un objeto de la lista")
+        objeto_elegido = input("Escribe el nombre del objeto elegido: ")
+    else:
+        continue
+    capturar = intentar_captura()
 
 

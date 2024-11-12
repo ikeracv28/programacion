@@ -7,7 +7,6 @@ numero = 0
 #mostramos el menu
 print(f"1-saludar")
 print(f"2-despedirse")
-
 print(f"3-Preguntar como esta")
 #le pedimos al usuario que nos diga un numero
 numero = int(input("Dime un número "))

@@ -20,3 +20,13 @@ numeros_pares = filter(es_par, numeros)
 print(list(numeros_pares))
 
 
+frase = "me gustan los sabados"
+vocales = "aeiou"
+
+def son_vocales(letras):
+	for caracter in frase:
+		if caracter in vocales:
+			return caracter
+		
+
+print ({caracter})

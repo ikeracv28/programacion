@@ -3,7 +3,7 @@ Ejercicio 4: Contador de Vocales
 Crea un programa que pida al usuario una cadena de texto y cuente cuántas vocales hay en la cadena. El programa debe considerar las vocales a, e, i, o, u en mayúsculas y minúsculas.
 '''
 #inicializams las variables
-texto = ''
+
 contador = 0
 
 #solicitamos datos necesarios

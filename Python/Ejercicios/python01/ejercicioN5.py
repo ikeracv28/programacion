@@ -14,13 +14,13 @@ numero = 0
 
 #hacemos un bucle while para que el bucle siga mientras el número no sea correcto y una condición para que le indique si es demasiado alto, demasiado bajo o correcto
 #solicitamos los datos que necesitamos
-while numero != numero_secreto :
-    numero = int(input("Dime un número"))
+while True :
+    numero = int(input("Dime un número: "))
     if numero > numero_secreto :
         print("El número ingresado es es muy alto, prueba otra vez")
     elif numero < numero_secreto : 
         print( "El número ingresado es muy bajo, prueba otra vez")
-if numero == numero_secreto :
-    print("¡Enhorabuena, el número es correcto!") 
-
+    if numero == numero_secreto :
+        break
+print("¡Enhorabuena, el número es correcto!")
 

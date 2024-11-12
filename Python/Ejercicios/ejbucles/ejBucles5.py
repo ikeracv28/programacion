@@ -12,7 +12,7 @@ Si la letra es una vocal, imprímela.
 '''
 #Primero damos valor a las variables
 frase = ""
-letra = ""
+
 #Ahora definimos cuales son las vocales
 vocales = "aeiou"
 

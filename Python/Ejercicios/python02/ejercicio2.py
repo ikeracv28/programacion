@@ -34,4 +34,4 @@ while True:
     promedio = suma / contador
 
 #mostramos el promedio de los números
-print(f"El promedio de los numeros es: es {promedio:.1f}")
+print(f"El promedio de los numeros es: es {promedio}")
